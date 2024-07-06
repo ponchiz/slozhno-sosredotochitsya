@@ -1,5 +1,222 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color, #000028);
+  background-image: url(/images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: var(--text-color, #F1B2CE);
+  font-family: var(--main-font, 'sans-serif');
+  font-size: var(--main-size, 18px);
+}
+
+.header {
+  block-size: 100vh;
+  min-block-size: 668px;
+  position: relative; 
+  align-items: center;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 10px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  top: 12px;
+  right: 10px;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  left: 0px;
+  bottom: 19px;
+}
+
+/* .header__decoration {
+   position: relative; 
+} */
+
+.header__decoration::before {
+  color: var(--accent-color);
+  content: "REC";
+  position: absolute;
+  top: 12px;
+  right: 39px;
+}
+
+.header__decoration::after {
+  content: "";
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  inline-size: 9px;
+  block-size: 9px;
+  top: 20px;
+  right: 19px;
+  position: absolute;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+  /* margin-bottom: 69px; */
+}
+
+.button {
+  color: var(--title-color);
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 1px 13px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--accent-color);
+}
+
+.header__title {
+  color: var(--main-title-color, #DB00FF);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px var(--accent-color);
+  line-height: 95.7px;
+  align-self: center;
+  margin-block-end: 98px;
+}
+
+.subtitle-accent {
+  background-color: var(--accent-color, #FF0070);
+  color: var(--subtitle-color, #000028);
+  font-weight: bold;
+  line-height: 23.4px;
+}
+
+.text__link {
+  text-shadow: 2px 2px var(--accent-color, #FF0070);
+  text-decoration: none;
+  
+}
+
+.text__link:hover {
+  border-bottom: 1px solid var(--text-color, #F1B2CE);
+}
+
+.subtitle__step {
+  font-weight: normal;
+}
+
+.header__subtitle-margin {
+  align-self: start;
+  margin-block-end: 10px;
+}
+
+.main {
+  padding: 0px 10px;
+}
+
+.section__container {
+  display: grid;
+  gap: 50px;
+}
+
+.section-content {
+  font-size: var(--main-size, 18px);
+  display: grid;
+  gap: 20px;
+}
+
+.title-main {
+  color: var(--title-color, #FF0070);
+  font-weight: bold;
+}
+
+.article-contain {
+  display: grid;
+  gap: 20px;
+}
+
+.article__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article__images {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 355px);
+  grid-template-rows: repeat(5, auto);
+  margin-bottom: 40px;
+}
+
+.article__image {
+  width: 100%;
+}
+
+.footer {
+  padding: 10px;
+  block-size: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.footer__title {
+  color: var(--main-title-color, #DB00FF);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 2px 2px var(--accent-color);
+  line-height: 95.7px;
+  font-weight: bold;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  top: 11px;
+  right: 0;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  left: 0px;
+  bottom: 9px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page {
+    padding: 20px;
+  }
+
+  .header__subtitle-margin {
+    justify-self: end;
+  }
+
+  .header__title {
+    align-self: center;
+  }
 }
